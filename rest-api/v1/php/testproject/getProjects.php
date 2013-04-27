@@ -6,7 +6,7 @@
  * @author Francisco Mancardi (francisco.mancardi@gmail.com)
  *
  */
-require '../lib/pest/Pest.php';
+require '../../../common/pest/Pest.php';
 
 if(!isset($_REQUEST['env']))
 {
@@ -20,6 +20,10 @@ if($_REQUEST['env'] == 'bit')
 
 if($_REQUEST['env'] == 'gito')
 {
+  // How to test using cUrl
+  // curl -i -X GET -u dev01:dev01 http://localhost/development/tlrepo/lib/api/rest/v1/testprojects
+  // -i include headers
+  // -X (HTTP) Specifies a custom request method to use when communicating with the HTTP server  
   $pest = new Pest('http://localhost/development/tlrepo/lib/api/rest/v1/');
 }
 

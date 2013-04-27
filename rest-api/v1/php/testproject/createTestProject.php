@@ -15,7 +15,7 @@
  *
  */
 
-require '../lib/pest/PestJSON.php';
+require '../../../common/pest/PestJSON.php';
 
 if(!isset($_REQUEST['env']))
 {
@@ -47,6 +47,13 @@ $item['options']['requirementsEnabled']=0;
 $item['options']['testPriorityEnabled'] = 1;
 $item['options']['automationEnabled'] = 1;
 $item['options']['inventoryEnabled'] = 0;
+
+
+// How to test using cUrl
+// curl -i -X POST --data "jsonFile"-u dev01:dev01 http://localhost/development/tlrepo/lib/api/rest/v1/testprojects
+// -i include headers
+// -X (HTTP) Specifies a custom request method to use when communicating with the HTTP server  
+
 
 echo '<br>IN CLIENT<br>';
 $xx = json_encode($item);
