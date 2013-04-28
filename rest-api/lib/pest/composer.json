@@ -1,7 +1,0 @@
-{
-    "name": "educoder/pest",
-    "description": "A proper REST client for PHP.",
-    "require": {
-
-    }
-}
