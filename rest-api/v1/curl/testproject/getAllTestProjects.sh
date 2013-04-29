@@ -9,5 +9,5 @@
 #        Multiple files can also be specified. 
 #        Posting data from a file named 'foobar' would thus be done with --data @foobar.
 #
-echo 'Testing TestLink REST API - POST /testprojects'
-curl -i -H "Content-Type: application/json" -X POST --data "@../json/createTestProject.json" -u dev01:dev01 http://localhost/development/tlrepo/lib/api/rest/v1/testprojects
+echo 'Testing TestLink REST API - GET /testprojects'
+curl -i -X GET  -u dev01xxx:dev01 http://localhost/development/tlrepo/lib/api/rest/v1/testprojects
