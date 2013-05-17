@@ -1,0 +1,23 @@
+{
+  "name":"Test Case BETA has STEPS",
+  "testSuiteID":378,
+  "testProjectID":358,
+  "summary":"This is a summary for Test Case",
+  "preconditions":"No preconditions",
+  "order":100,
+  "authorID":1,
+  "importance":2,
+  "executionType":1,
+  "steps": [
+            { "step_number":1,
+              "actions": "red",
+              "expected_results": "#f00",
+              "execution_type":1
+            },
+            { "step_number":12,
+              "actions": "red12",
+              "expected_results": "#f00",
+              "execution_type":2
+            }
+           ]
+}
