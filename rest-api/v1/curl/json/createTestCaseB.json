@@ -1,0 +1,11 @@
+{
+  "name":"Test Case ALFA",
+  "testSuiteID":360,
+  "testProjectID":358,
+  "summary":"This is a summary for Test Case",
+  "preconditions":"No preconditions",
+  "order":100,
+  "authorID":1,
+  "importance":2,
+  "executionType":1,
+}
