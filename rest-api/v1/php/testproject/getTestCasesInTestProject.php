@@ -1,6 +1,6 @@
 <?php
 /**
- * @filesource getProjects.php
+ * @filesource getTestPlansInTestProjects.php
  * Bare bones test for REST API GET /testprojects
  * 
  * @author Francisco Mancardi (francisco.mancardi@gmail.com)
@@ -21,7 +21,7 @@ if($_REQUEST['env'] == 'bit')
 if($_REQUEST['env'] == 'gito')
 {
   // How to test using cUrl
-  // curl -i -X GET -u dev01:dev01 http://localhost/development/tlrepo/lib/api/rest/v1/testprojects
+  // curl -i -X GET 
   // -i include headers
   // -X (HTTP) Specifies a custom request method to use when communicating with the HTTP server  
   $pest = new Pest('http://localhost/development/test_tl/testlink/lib/api/rest/v1/');
@@ -30,23 +30,6 @@ if($_REQUEST['env'] == 'gito')
 $password = $user = 'admin';
 $pest->setupAuth($user, $password);
 
-echo '<b>Access ALL TESTPROJECTS</b><br>';
-$thing = json_decode($pest->get('/testprojects'));
-echo '<pre>';var_dump($thing);echo '<pre><br>';
-
-
-echo '<b>Access Only ONE TESTPROJECT</b><br>';
-$ox = (object) array('id' => 1208);
-echo 'Route:' . '/testprojects/' . $ox->id;
-  
-$thing = json_decode($pest->get('/testprojects/' . $ox->id));
-echo '<pre>';var_dump($thing);echo '<pre><br>';
-
-
-
-echo '<b>Access Only ONE TESTPROJECT</b><br>';
-$ox = (object) array('id' => 'Slim REST Framework');
-echo 'Route:' . '/testprojects/' . $ox->id;
-  
-$thing = json_decode($pest->get('/testprojects/' . urlencode($ox->id)));
+echo '<b>Access ALL TEST CASES present in a test project </b><br>';
+$thing = json_decode($pest->get('/testprojects/94/testcases'));
 echo '<pre>';var_dump($thing);echo '<pre><br>';

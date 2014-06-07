@@ -9,5 +9,5 @@
 #        Multiple files can also be specified. 
 #        Posting data from a file named 'foobar' would thus be done with --data @foobar.
 #
-echo 'Testing TestLink REST API - GET /testprojects'
-curl -i -X GET  -u dev01xxx:dev01 http://localhost/development/test_tl/testlink/lib/api/rest/v1/testprojects
+echo 'Testing TestLink REST API - GET /testprojects/94/testplans'
+curl -i -X GET  -u admin:noway http://localhost/development/test_tl/testlink/lib/api/rest/v1/testprojects/94/testplans
