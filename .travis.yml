@@ -1,0 +1,36 @@
+env:
+  global:
+# GITHUB_TOKEN
+  - secure: LYqe4kN1i8BqVEAO8fdO+CYrx9z8h1ab+NxCgYubLcP70DZoKNRj1/egULOd3uvDHFigFVeaACRR6vUQnHbHsffSkMr4nqwOeJMbxOdspHPuA4oMUy5RZKRC7P+v6Dlwpg4Psg/VsEnP6lHWb/RbosBE8tU8ukewD14EU3o29Ql+lBfvvOW/81UTGokMQa1zrW9o70oEaTYqePT9YzM9UcKgukshYtcxKE3oiwLm3fB8zBAUJwzkEvBGNpXjqBEDCUjrS80CqgY3BRsPfnPk90LgjeORaZKoP1f/bZE4UtgeESK0xpWsKEcDCRkSfGxYw8rD7nwc6H5LiCeoS87oQpUCMsoijmGL1yLrBBMIRAWoMC/o+h/QI5bb+IyLba6KLihY4LpExnWj2V8Mh6qs6AeV8v/Dl1WdyIi72WIkMBrmVrOhtoJJ45QaZJbrwSMeM4/ShS5NdiLFnGKeYOjMJ+DQZa+//SIwnvsOegm918TmOZqCr2YabI6WYixOzYjQPvI2KliZGekaX9uSNxVwoWZDE8jvdhvBWtHsL6hMqAv5ehEJw1aseLwjEGHQjIY0YBqJI38QmFr0vro6/9U2EehXHeW3ycCrPguQJ50nIK/DwiGMadUhrxU0xfZ6+TfFpGY0RivEPLD+Cup9C5oVFAppPJncdBdXUqouR90/8NI=
+addons:
+  sonarqube:
+    branches:
+    - master
+language: python
+matrix:
+  include:
+    - os: linux
+      sudo;: required
+      python: 2.7
+      env: TOXENV=py27
+    - os: linux
+      sudo;: required
+      python: 3.4
+      env: TOXENV=py34
+    - os: linux
+      sudo;: required
+      python: 3.5
+      env: TOXENV=py35
+    - os: linux
+      sudo;: required
+      python: 3.6
+      env: TOXENV=py36
+
+before_install:
+- pip freeze
+install:
+- pip install tox
+script:
+- tox -e "{$TOXENV},flake8"
+after_script:
+- python setup.py sdist
