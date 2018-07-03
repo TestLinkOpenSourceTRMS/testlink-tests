@@ -45,7 +45,7 @@ Prerequisites
 How to install ?
 ----------------
 
-+ Install from PIP : ``pip install testlink-tests``
++ Install from PIP : ``pip install testlinktests``
 
 + Install from setup.py file : ``python setup.py install``
 
