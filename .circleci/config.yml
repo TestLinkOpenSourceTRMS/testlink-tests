@@ -1,0 +1,49 @@
+# Python CircleCI 2.0 configuration file
+version: 2
+jobs:
+  build:
+    environment:
+      CC_TEST_REPORTER_ID: 181a274c2c68483ff80af63a8a87e1f5fab71f37744eab702f25695501b5ca85
+    docker:
+      - image: circleci/python:3.6.1
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            # CI, CircleCI dependencies
+            python3 -m venv venv
+            . venv/bin/activate
+            # CI, codeclimate dependencies
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            pip install codeclimate-test-reporter
+            # project dependencies
+            pip install tox
+            pip install coverage==4.2
+      - run:
+          name: Install project
+          command: |
+            . venv/bin/activate
+            python setup.py install
+      - run:
+          name: Before Tests
+          command: |
+            ./cc-test-reporter before-build
+      - run:
+          name: Run Tests
+          command: |
+            . venv/bin/activate
+            tox -e coverage,flake8
+      - run:
+          name: After Tests
+          command: |
+            . venv/bin/activate
+            ls -ltra tests/reports/
+            codeclimate-test-reporter --token $CC_TEST_REPORTER_ID --file .coverage
+      - store_artifacts:
+          path: dist
+          destination: dist

@@ -99,5 +99,7 @@ Getting Started
   :target: https://travis-ci.org/netzulo/testlink-tests
 .. |master_ci_appveyor| image:: https://ci.appveyor.com/api/projects/status/8kqf9o9mjgvte40j?svg=true
   :target: https://ci.appveyor.com/project/netzulo/testlink-tests
-.. |master_ci_circleci| image:: http://demo.testlink.org
-.. |master_ci_codeclimate| image:: http://demo.testlink.org
+.. |master_ci_circleci| image:: https://circleci.com/gh/netzulo/testlink-tests.svg?style=svg
+  :target: https://circleci.com/gh/netzulo/testlink-tests)
+.. |master_ci_codeclimate| image:: https://api.codeclimate.com/v1/badges/84904556cd07ad4fcf00/maintainability
+  :target: https://codeclimate.com/github/netzulo/testlink-tests/maintainability
