@@ -68,6 +68,7 @@ setup(
     ],
     tests_require=[
         'pytest',
+        'pytest-raises',
         'pytest-html',
         'pytest-dependency',
         'pytest-benchmark',
