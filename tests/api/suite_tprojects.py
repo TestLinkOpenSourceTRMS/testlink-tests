@@ -3,9 +3,9 @@
 
 
 import pytest
-from testlinktests.core.utils import settings
 from qatestlink.core.exceptions.response_exception import ResponseException
 from qatestlink.core.testlink_manager import TLManager
+from testlinktests.core.utils import settings
 
 
 CONFIG = settings(

@@ -3,9 +3,9 @@
 
 
 import pytest
-from testlinktests.core.utils import settings
 from qatestlink.core.exceptions.response_exception import ResponseException
 from qatestlink.core.testlink_manager import TLManager
+from testlinktests.core.utils import settings
 
 
 CONFIG = settings(
@@ -19,7 +19,6 @@ class TestMethods(object):
 
     def setup_method(self, test_method, **kwargs):
         """TODO: doc method"""
-
         if 'skipIf' in dir(test_method) and test_method.skipIf.args[0]:
             pytest.skip(test_method.skipIf.args[1])
             return
