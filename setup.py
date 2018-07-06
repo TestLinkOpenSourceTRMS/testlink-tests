@@ -4,11 +4,11 @@
 
 from os import path
 from setuptools import setup, find_packages
-from testlinktests.core.utils import read_file
-from testlinktests.core.utils import path_format
+from qautils.files import read_file
+from qautils.files import path_format
 
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 CURR_PATH = "{}{}".format(path.abspath(path.dirname(__file__)), '/')
 
 
@@ -60,14 +60,14 @@ setup(
         'functional'
     ],
     install_requires=[
-        'qatestlink'
+        'qatestlink',
+        'pytest'
     ],
     setup_requires=[
         'tox',
         'pytest-runner',
     ],
     tests_require=[
-        'pytest',
         'pytest-raises',
         'pytest-html',
         'pytest-dependency',

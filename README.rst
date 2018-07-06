@@ -39,7 +39,7 @@ Python tested versions
 Prerequisites
 -------------
 
-+ Prerequisites : ``TODO: make sense``
++ QAUtils package, to install with **setup.py** or **pip** : ``pip install qautils``
 
 
 How to install ?
