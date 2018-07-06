@@ -10,7 +10,7 @@ from testlinktests.core.utils import settings
 
 CONFIG = settings(
     file_path="testlinktests/configs/",
-    file_name="settings.json"
+    file_name="settings.example.json"
 )
 
 
