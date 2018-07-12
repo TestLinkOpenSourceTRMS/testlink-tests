@@ -95,11 +95,11 @@ Getting Started
 
 
 .. _Usage Guide: USAGE.rst
-.. |master_ci_travis| image:: https://travis-ci.org/netzulo/testlink-tests.svg?branch=master
+.. |master_ci_travis| image:: https://travis-ci.org/TestLinkOpenSourceTRMS/testlink-tests.svg?branch=master
   :target: https://travis-ci.org/netzulo/testlink-tests
-.. |master_ci_appveyor| image:: https://ci.appveyor.com/api/projects/status/8kqf9o9mjgvte40j?svg=true
+.. |master_ci_appveyor| image:: https://ci.appveyor.com/api/projects/status/5rcuh1wj3rissqu64wmb/branch/master?svg=true
   :target: https://ci.appveyor.com/project/netzulo/testlink-tests
-.. |master_ci_circleci| image:: https://circleci.com/gh/netzulo/testlink-tests.svg?style=svg
+.. |master_ci_circleci| image:: https://circleci.com/gh/TestLinkOpenSourceTRMS/testlink-tests.svg?style=svg
   :target: https://circleci.com/gh/netzulo/testlink-tests)
-.. |master_ci_codeclimate| image:: https://api.codeclimate.com/v1/badges/84904556cd07ad4fcf00/maintainability
-  :target: https://codeclimate.com/github/netzulo/testlink-tests/maintainability
+.. |master_ci_codeclimate| image:: https://api.codeclimate.com/v1/badges/-/maintainability
+  :target: https://codeclimate.com/github/TestLinkOpenSourceTRMS/testlink-tests/maintainability
