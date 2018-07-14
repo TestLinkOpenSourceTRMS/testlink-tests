@@ -4,8 +4,8 @@
 
 from os import path
 from setuptools import setup, find_packages
-from qautils.files import read_file
-from qautils.files import path_format
+from testlinktests.core.utils import read_file
+from testlinktests.core.utils import path_format
 
 
 VERSION = '0.0.2'

@@ -1,7 +1,7 @@
 {
     "connection":{
       "is_https": false,
-      "host": "qalab.tk",
+      "host": "ntz-qa.tk",
       "port": 86
     },
     "dev_key": "1bfd2ef4ceda22b482b12f2b25457495",

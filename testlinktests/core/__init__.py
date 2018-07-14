@@ -7,8 +7,7 @@
 """
 
 
-from testlinktests.core import test_info
 from testlinktests.core import utils
 
 
-__all__ = ['test_info', 'utils']
+__all__ = ['utils']

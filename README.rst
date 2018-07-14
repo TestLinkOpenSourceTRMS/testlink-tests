@@ -39,7 +39,7 @@ Python tested versions
 Prerequisites
 -------------
 
-+ QAUtils package, to install with **setup.py** or **pip** : ``pip install qautils``
++ Need Testlink WebApp **Up and Running**
 
 
 How to install ?
