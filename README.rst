@@ -95,8 +95,8 @@ Getting Started
 
 
 .. _Usage Guide: USAGE.rst
-.. |master_ci_travis| image:: https://travis-ci.org/TestLinkOpenSourceTRMS/testlink-tests.svg?branch=master
-  :target: https://travis-ci.org/netzulo/testlink-tests
+.. |master_ci_travis| image:: https://travis-ci.com/TestLinkOpenSourceTRMS/testlink-tests.svg?branch=master
+  :target: https://travis-ci.com/TestLinkOpenSourceTRMS/testlink-tests
 .. |master_ci_appveyor| image:: https://ci.appveyor.com/api/projects/status/5rcuh1wj3rissqu64wmb/branch/master?svg=true
   :target: https://ci.appveyor.com/project/netzulo/testlink-tests
 .. |master_ci_circleci| image:: https://circleci.com/gh/TestLinkOpenSourceTRMS/testlink-tests.svg?style=svg
