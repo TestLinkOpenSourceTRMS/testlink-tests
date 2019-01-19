@@ -12,3 +12,10 @@ NO Attachments
 NO Requirements
 
 ![](./images/TS-100.barebones.png)
+
+RSPEC-01-req-spec.barebones.xml
+Contains:
+1 Req Specification
+6 Requirements
+
+![](./images/RSPEC-01-req-spec.barebones.png)
