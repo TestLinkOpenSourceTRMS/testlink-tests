@@ -61,7 +61,8 @@ setup(
     ],
     install_requires=[
         'qatestlink',
-        'pytest'
+        'six==1.10.0',
+        'pytest==3.9.3',
     ],
     setup_requires=[
         'tox',

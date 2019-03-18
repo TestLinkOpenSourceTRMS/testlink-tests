@@ -8,6 +8,7 @@ environment:
     # /E:ON and /V:ON options are not enabled in the batch script intepreter
     # See: http://stackoverflow.com/a/13751649/163740
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
+    CLCACHE_NODIRECT: "true"
 
   matrix:
     - JOB: "2.7 32-bit"
@@ -51,12 +52,9 @@ install:
   # about it being out of date.
   - "python -m pip install wheel"
   - "python -m pip install --pre -U tox"
-  - "pip install qautils"
-  - "python setup.py clean"
-  - "python setup.py build"
 
 test_script:
- - "tox -e %TOXENV%,flake8"
+ - "tox -e flake8,%TOXENV%"
 
 after_test:
   - "python setup.py sdist"

@@ -30,7 +30,6 @@ before_install:
 - pip freeze
 install:
 - pip install tox
+- python setup.py clean build install sdist
 script:
-- tox -e "{$TOXENV},flake8"
-after_script:
-- python setup.py sdist
+- tox -e "flake8,{$TOXENV}"

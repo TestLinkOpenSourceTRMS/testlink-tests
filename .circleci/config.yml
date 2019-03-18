@@ -37,7 +37,7 @@ jobs:
           name: Run Tests
           command: |
             . venv/bin/activate
-            tox -e coverage,flake8
+            tox -e flake8,coverage
       - run:
           name: After Tests
           command: |

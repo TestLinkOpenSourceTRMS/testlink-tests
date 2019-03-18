@@ -27,13 +27,12 @@ class TestCheckDevKey(TestInfoBase):
         """TestCase: test_checkdevkey
             Login success with valid config
         """
-        msg_error = "API_KEY it's invalid when must be valid"
         is_logged = self.tlm.api_login()
-        self.assert_true(is_logged, msg=msg_error)
+        self.assert_true(
+            is_logged, msg="API_KEY it's invalid when must be valid")
 
     @pytest.mark.raises(exception=ResponseException)
     def test_raises_checkdevkey(self):
         """TestCase: test_raises_checkdevkey"""
-        msg_error = "API_KEY it's invalid when must be valid"
-        is_logged = self.tlm.api_login(dev_key='willfail')
-        self.assert_false(is_logged, msg=msg_error)
+        with pytest.raises(ResponseException):
+            self.tlm.api_login(dev_key='willfail')
