@@ -1,0 +1,10 @@
+Directory content
+
+json
+ files that can be used as API documentation and also to test TestLink REST API using curl
+
+curl
+ bash scripts to test TestLink REST API using curl
+
+php
+ php examples of TestLink REST API usage 
