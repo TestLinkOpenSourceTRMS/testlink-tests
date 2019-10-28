@@ -102,7 +102,6 @@ ENV/
 .sonar/
 
 # TESTLINKTESTS ignores
-testlinktests/configs/settings.json
 tests/reports/*
 tests/reports/coverage/*
 tests/reports/benchmarks/benchmark.*.svg

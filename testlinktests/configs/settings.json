@@ -1,0 +1,33 @@
+{ "bot": {
+  "log_output_file": "./",
+  "log_name": "testlinktests",
+  "log_level": "INFO",
+  "mode": "remote",
+  "browser": "chrome",
+  "options": { "headless": false },
+  "url_hub": "http://netzulo.tk:11000/wd/hub",
+  "drivers_path": "../qadrivers",
+  "drivers_names": []
+},
+"testlink": {
+  "connection":{
+    "is_https": false,
+    "host": "netzulo.tk",
+    "port": 86
+  },
+  "dev_key": "1bfd2ef4ceda22b482b12f2b25457495",
+  "log_level":"INFO"
+},
+"tests": {
+  "skip":{
+    "login": false
+  },
+  "apps": [
+    { "name": "testlink",
+      "pages": [
+        { "name": "login", "url": "http://netzulo.tk:88/login.php"}
+      ]
+    }
+  ]
+}
+}

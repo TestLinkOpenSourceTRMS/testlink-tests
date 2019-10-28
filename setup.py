@@ -60,9 +60,7 @@ setup(
         'functional'
     ],
     install_requires=[
-        'qatestlink',
-        'six==1.10.0',
-        'pytest==3.9.3',
+        'qacode==0.6.2',
     ],
     setup_requires=[
         'tox',
