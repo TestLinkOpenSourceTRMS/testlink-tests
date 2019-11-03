@@ -6,7 +6,7 @@ import pytest
 from qatestlink.core.exceptions.response_exception import ResponseException
 from qatestlink.core.testlink_manager import TLManager
 from testlinktests.core.test_info import TestInfoBase
-from qautils.files import settings
+from testlinktests.core.utils import settings
 
 
 SETTINGS = settings(file_path="testlinktests/configs/")
