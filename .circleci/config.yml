@@ -22,7 +22,7 @@ jobs:
             chmod +x ./cc-test-reporter
             pip install codeclimate-test-reporter
             # project dependencies
-            pip install tox
+            pip install tox qacode==0.6.2
             pip install coverage==4.2
       - run:
           name: Install project

@@ -29,7 +29,7 @@ matrix:
 before_install:
 - pip freeze
 install:
-- pip install tox
+- pip install tox qacode==0.6.2
 - python setup.py clean build install sdist
 script:
 - tox -e "flake8,{$TOXENV}"
