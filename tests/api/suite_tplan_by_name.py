@@ -7,13 +7,12 @@ from qatestlink.core.exceptions.response_exception import ResponseException
 from qatestlink.core.models.tl_models import TPlan
 from qatestlink.core.testlink_manager import TLManager
 from testlinktests.core.test_info import TestInfoBase
-from testlinktests.core.utils import settings as CFG
+from testlinktests.core.utils import settings
 
 
-CONFIG = CFG(
-    file_path="testlinktests/configs/",
-    file_name="settings.json"
-)
+SETTINGS = settings(file_path="testlinktests/configs/")
+SKIP = SETTINGS['tests']['skip']['api']
+SKIP_MSG = 'DISABLED by config file'
 
 
 class TestTProjects(TestInfoBase):
@@ -25,11 +24,12 @@ class TestTProjects(TestInfoBase):
     def setup_method(self, test_method, **kwargs):
         """TODO: doc method"""
         super(TestTProjects, self).setup_method(
-            test_method, **{"tlm": TLManager(settings=CONFIG)})
+            test_method, **{"tlm": TLManager(config=SETTINGS)})
         # Tplan must be assigned to testproject to get tests working
         self.tproject_name = 'testlink-tests'
         self.tplan_name = 'xmlrpc'
 
+    @pytest.mark.skipIf(SKIP, SKIP_MSG)
     def test_get_tplan_by_name(self):
         """TestCase: test_get_tplan_by_name
             At least must exist one TestPlan
@@ -47,7 +47,7 @@ class TestTProjects(TestInfoBase):
         self.assert_is_instance(tplan.id, int)
         self.assert_equals(tplan.name, self.tplan_name)
 
-    @pytest.mark.skipIf(True, "Issue oneped at qatestlink library, #52")
+    @pytest.mark.skipIf(True, "Issue opened at qatestlink library, #52")
     @pytest.mark.raises(exception=ResponseException)
     def test_raises_tplan_by_name_baddevkey(self):
         """TestCase: test_raises_tplan_by_name_baddevkey"""

@@ -20,6 +20,7 @@
 },
 "tests": {
   "skip":{
+    "api": true,
     "login": false,
     "index": false
   },

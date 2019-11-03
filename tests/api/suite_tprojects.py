@@ -7,13 +7,12 @@ from qatestlink.core.exceptions.response_exception import ResponseException
 from qatestlink.core.models.tl_models import TProject
 from qatestlink.core.testlink_manager import TLManager
 from testlinktests.core.test_info import TestInfoBase
-from testlinktests.core.utils import settings as CFG
+from testlinktests.core.utils import settings
 
 
-CONFIG = CFG(
-    file_path="testlinktests/configs/",
-    file_name="settings.json"
-)
+SETTINGS = settings(file_path="testlinktests/configs/")
+SKIP = SETTINGS['tests']['skip']['api']
+SKIP_MSG = 'DISABLED by config file'
 
 
 class TestTProjects(TestInfoBase):
@@ -22,8 +21,9 @@ class TestTProjects(TestInfoBase):
     def setup_method(self, test_method, **kwargs):
         """TODO: doc method"""
         super(TestTProjects, self).setup_method(
-            test_method, **{"tlm": TLManager(settings=CONFIG)})
+            test_method, **{"tlm": TLManager(config=SETTINGS)})
 
+    @pytest.mark.skipIf(SKIP, SKIP_MSG)
     def test_get_tprojects(self):
         """TestCase: test_get_tprojects
             At least must exist one TestProject

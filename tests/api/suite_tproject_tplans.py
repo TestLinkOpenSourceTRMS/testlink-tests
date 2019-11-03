@@ -2,16 +2,16 @@
 """TODO: doc module"""
 
 
+import pytest
 from qatestlink.core.models.tl_models import TPlan
 from qatestlink.core.testlink_manager import TLManager
 from testlinktests.core.test_info import TestInfoBase
-from testlinktests.core.utils import settings as CFG
+from testlinktests.core.utils import settings
 
 
-CONFIG = CFG(
-    file_path="testlinktests/configs/",
-    file_name="settings.json"
-)
+SETTINGS = settings(file_path="testlinktests/configs/")
+SKIP = SETTINGS['tests']['skip']['api']
+SKIP_MSG = 'DISABLED by config file'
 
 
 class TestTProjectTPlans(TestInfoBase):
@@ -20,8 +20,9 @@ class TestTProjectTPlans(TestInfoBase):
     def setup_method(self, test_method, **kwargs):
         """TODO: doc method"""
         super(TestTProjectTPlans, self).setup_method(
-            test_method, **{"tlm": TLManager(settings=CONFIG)})
+            test_method, **{"tlm": TLManager(config=SETTINGS)})
 
+    @pytest.mark.skipIf(SKIP, SKIP_MSG)
     def test_get_tproject_tplans(self):
         """TestCase: test_get_tprojects_minimal_one
             At least must exist one TPlan for this TProject
