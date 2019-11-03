@@ -6,7 +6,8 @@
 """
 
 
+from testlinktests.core.pages import page_index
 from testlinktests.core.pages import page_login
 
 
-__all__ = ['page_login']
+__all__ = ['page_index', 'page_login']

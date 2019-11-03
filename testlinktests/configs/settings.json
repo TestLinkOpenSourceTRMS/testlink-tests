@@ -1,5 +1,5 @@
 { "bot": {
-  "log_output_file": "./",
+  "log_output_file": "./logs/",
   "log_name": "testlinktests",
   "log_level": "INFO",
   "mode": "remote",
@@ -20,12 +20,15 @@
 },
 "tests": {
   "skip":{
-    "login": false
+    "login": false,
+    "index": false
   },
   "apps": [
     { "name": "testlink",
+      "data": { "usr": "admin", "pwd": "admin"},
       "pages": [
-        { "name": "login", "url": "http://netzulo.tk:88/login.php"}
+        { "name": "login", "url": "http://netzulo.tk:88/login.php"},
+        { "name": "index", "url": "http://netzulo.tk:88/index.php"}
       ]
     }
   ]
