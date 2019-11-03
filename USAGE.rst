@@ -1,8 +1,43 @@
 Usage Guide
 ===========
 
-Usage ( *XMLRPC* )
-******************
+1. Usage ( *WebAPP* )
+*********************
+
++ 1. Create JSON configuration ( runtime or read from file, *read config section* )
++ 2. Instance **Bot** object
+
+.. code:: python
+
+   
+   from qacode.core.bot import BotBase
+   from qautils.files import settings
+   
+   cfg = settings(file_path="./testlink-tests/configs/")
+   bot = BotBase(**cfg)
+     
+
++ 3. Instance **Testlink Page** object
+
+.. code:: python
+
+   
+   from testlinktests.core.pages import (PageLogin, PageIndex)
+   
+   login = PageLogin(bot, **{"url": "http://netzulo.tk:88/login.php"})
+   index = PageIndex(bot, **{"url": "http://netzulo.tk:88/index.php"})
+   
+   is_logged = login.login("admin", "admin")
+   if not is_logged:
+       raise Exception("Login not working")
+   index.menu_top()
+   index.menu_right()
+   index.menu_left()
+   
+
+
+2. Usage ( *XMLRPC* )
+*********************
 
 + 1. Create JSON configuration ( runtime or read from file, *read config section* )
 + 2. Instance **testlink_manager** object ``testlink_manager = TLManager(settings=my_json_config)``
