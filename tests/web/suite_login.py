@@ -33,9 +33,11 @@ class TestPageLogin(TestInfoBotUnique):
         """Configure self.attribute"""
         super(TestPageLogin, self).setup_method(
             test_method, config=SETTINGS)
-        # page
-        self.page = PageLogin(self.bot, **self.cfg.copy())
-        req_information.url("login", self.page, go_url=False)
+        # testcase preconditions
+        try:
+            self.page = PageLogin(self.bot, **self.cfg.copy())
+        except Exception as err:
+            self.log.error("Bot Fails at precondition: %s", err.message)
 
     @pytest.mark.skipIf(SKIP, SKIP_MSG)
     @pytest.mark.dependency(name="loads")
