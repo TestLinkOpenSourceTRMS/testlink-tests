@@ -7,7 +7,8 @@
 """
 
 
+from testlinktests.core import specs
 from testlinktests.core import utils
 
 
-__all__ = ['utils']
+__all__ = ['specs', 'utils']
