@@ -12,7 +12,7 @@ from testlinktests.core.utils import settings as CFG
 
 CONFIG = CFG(
     file_path="testlinktests/configs/",
-    file_name="settings.example.json"
+    file_name="settings.json"
 )
 
 
