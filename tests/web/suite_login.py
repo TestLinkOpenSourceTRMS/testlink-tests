@@ -10,6 +10,7 @@ import pytest
 from qacode.core.testing.test_info import TestInfoBotUnique
 from qautils.files import settings
 from testlinktests.core.pages.page_login import PageLogin
+from testlinktests.core.specs import req_information
 
 
 SETTINGS = settings(file_path="testlinktests/configs/")
@@ -25,29 +26,23 @@ class TestPageLogin(TestInfoBotUnique):
         """Setup class (suite) to be executed"""
         super(TestPageLogin, cls).setup_class(
             config=SETTINGS, skip_force=SKIP)
+        cls.add_property('app', cls.cfg_app('testlink'))
+        cls.add_property('cfg', cls.cfg_page('login'))
 
     def setup_method(self, test_method):
         """Configure self.attribute"""
         super(TestPageLogin, self).setup_method(
             test_method, config=SETTINGS)
-        self.add_property('app', self.cfg_app('testlink'))
         # page
-        self.add_property('cfg', self.cfg_page('login'))
         self.page = PageLogin(self.bot, **self.cfg.copy())
-        self.assert_is_instance(self.page, PageLogin)
-
-    def ri_login_url(self, page):
-        """Information requirement"""
-        self.assert_is_instance(self.page, PageLogin)
-        if not page.is_url():
-            page.go_url()
+        req_information.url("login", self.page, go_url=False)
 
     @pytest.mark.skipIf(SKIP, SKIP_MSG)
     @pytest.mark.dependency(name="loads")
     def test_login_loads(self):
         """Testcase: test_login_loads"""
         try:
-            self.page.go_url()
+            req_information.url("login", self.page)
             self.assert_true(self.page.is_url())
         except AssertionError as err:
             self.log.error("Bot Fails at assert %s", err.message)
@@ -60,7 +55,7 @@ class TestPageLogin(TestInfoBotUnique):
     def test_login_ok(self, username, password):
         """Testcase: test_login_ok"""
         try:
-            self.ri_login_url(self.page)
+            req_information.url("login", self.page)
             is_logged = self.page.login(username, password)
             self.assert_true(is_logged)
         except AssertionError as err:
@@ -77,7 +72,7 @@ class TestPageLogin(TestInfoBotUnique):
     def test_login_ko(self, username, password):
         """Testcase: test_login_ko"""
         try:
-            self.ri_login_url(self.page)
+            req_information.url("login", self.page)
             is_logged = self.page.login(username, password)
             self.assert_false(is_logged)
         except AssertionError as err:
