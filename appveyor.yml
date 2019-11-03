@@ -51,7 +51,7 @@ install:
   # Upgrade to the latest version of pip to avoid it displaying warnings
   # about it being out of date.
   - "python -m pip install wheel"
-  - "python -m pip install --pre -U tox qacode==0.6.2"
+  - "python -m pip install --pre -U tox"
 
 test_script:
  - "tox -e flake8,%TOXENV%"
