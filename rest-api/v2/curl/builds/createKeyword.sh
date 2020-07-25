@@ -11,7 +11,7 @@
 echo 'Testing TestLink REST API - POST /keywords'
 curl -i \
      -H "Content-Type: application/json" \
-     -H "APIKEY: b8359492ca233fd1ce55d6363cd026cf" \
+     -H @{'custom_header'='custom_header_value'} \
      -X POST --data "@../../json/createKeyword.json" \
-     -u developer:followthewitherabbitneo \
+     -u b8359492ca233fd1ce55d6363cd026cf:b8359492ca233fd1ce55d6363cd026cf \
      http://localhost/development/github/testlink-code/lib/api/rest/v2/keywords

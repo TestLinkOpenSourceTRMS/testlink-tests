@@ -1,7 +1,7 @@
 {
   "name":"Test Case BETA has STEPS",
   "testSuiteID":378,
-  "testProjectID":358,
+  "testProject":{"id":358},
   "summary":"This is a summary for Test Case",
   "preconditions":"No preconditions",
   "order":100,

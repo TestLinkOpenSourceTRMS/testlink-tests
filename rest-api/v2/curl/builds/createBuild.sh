@@ -8,10 +8,8 @@
 #        Multiple files can also be specified. 
 #        Posting data from a file named 'foobar' would thus be done with --data @foobar.
 #
-echo 'Testing TestLink REST API - POST /keywords'
-curl -i \
-     -H "Content-Type: application/json" \
-     -H "APIKEY: b8359492ca233fd1ce55d6363cd026cf" \
-     -X POST --data "@../../json/createKeyword.json" \
-     -u developer:followthewitherabbitneo \
-     http://localhost/development/github/testlink-code/lib/api/rest/v2/keywords
+echo 'Testing TestLink REST API - POST /builds'
+curl -i -H "Content-Type: application/json" \
+     -X POST --data "@../../json/createBuild.json" \
+     -u b8359492ca233fd1ce55d6363cd026cf:b8359492ca233fd1ce55d6363cd026cf \
+     http://localhost/development/github/testlink-code/lib/api/rest/v2/builds
